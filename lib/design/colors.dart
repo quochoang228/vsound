@@ -21,6 +21,8 @@ abstract class AppColors {
   static const Color sysWhite = Color(0xffFFFFFF);
 
   static const Color sysBlack = Color(0xff000000);
+  static const Color sysDarkGray = Color(0xff8E8E93);
+  static const Color textSecondary = Color(0xffEBEBF5);
 
 
 

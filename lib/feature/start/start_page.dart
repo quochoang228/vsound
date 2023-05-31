@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:vsounds/design/colors.dart';
 import 'package:vsounds/design/text_style.dart';
 import 'package:vsounds/generated/assets.gen.dart';
+import 'package:vsounds/router/paths.dart';
 import 'package:vsounds/widgets/normal_button.dart';
 
 final startPageViewController =
@@ -47,17 +49,54 @@ class _StartPageState extends ConsumerState<StartPage> {
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.bgPrimery,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
+          // Expanded(
+          //   child: Column(
+          //     mainAxisSize: MainAxisSize.max,
+          //     children: [
+          //       Flexible(
+          //         child: PageView(
+          //           controller: pageController,
+          //           onPageChanged: (value) => ref
+          //               .read(startPageIndex.notifier)
+          //               .update((state) => value),
+          //           physics: const NeverScrollableScrollPhysics(),
+          //           children: _listPage,
+          //         ),
+          //       ),
+          //       Row(
+          //         mainAxisAlignment: MainAxisAlignment.center,
+          //         children: _listPage.asMap().entries.map((entry) {
+          //           return AnimatedContainer(
+          //             duration: const Duration(milliseconds: 300),
+          //             width: ref.watch(startPageIndex) == entry.key ? 24 : 8,
+          //             height: 8,
+          //             margin: const EdgeInsets.symmetric(horizontal: 4),
+          //             decoration: BoxDecoration(
+          //               shape: BoxShape.rectangle,
+          //               color: ref.watch(startPageIndex) == entry.key
+          //                   ? AppColors.sysPrimery
+          //                   : AppColors.bgSecondary,
+          //               borderRadius: BorderRadius.circular(30),
+          //             ),
+          //           );
+          //         }).toList(),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // const Gap(64),
+
+          Flexible(
             child: PageView(
               controller: pageController,
               onPageChanged: (value) =>
                   ref.read(startPageIndex.notifier).update((state) => value),
-              physics: const NeverScrollableScrollPhysics(),
+              // physics: const NeverScrollableScrollPhysics(),
               children: _listPage,
             ),
           ),
-          const Gap(64),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: _listPage.asMap().entries.map((entry) {
@@ -76,11 +115,12 @@ class _StartPageState extends ConsumerState<StartPage> {
               );
             }).toList(),
           ),
+
           const Gap(24),
           Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 32).copyWith(bottom: 32),
+            padding: const EdgeInsets.symmetric(horizontal: 32),
             child: NormalButton(
+              borderRadius: BorderRadius.circular(100),
               text: "Next",
               onTap: () {
                 pageController.nextPage(
@@ -88,7 +128,18 @@ class _StartPageState extends ConsumerState<StartPage> {
                     curve: Curves.ease);
               },
             ),
-          )
+          ),
+          const Gap(12),
+          TextButton(
+            onPressed: () {
+              context.push(Paths.root);
+            },
+            child: const Text(
+              'Skip',
+              style: UITextStyles.hedline,
+            ),
+          ),
+          // const Gap(36),
 
           // TextButton.icon(
           //   onPressed: () {
@@ -130,6 +181,7 @@ class PageViewStart extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
       children: [
         image,
         const Gap(40),
@@ -152,6 +204,7 @@ class PageViewStart extends StatelessWidget {
             ),
           ),
         ),
+        const Gap(64),
       ],
     );
   }

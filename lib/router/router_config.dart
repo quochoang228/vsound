@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vsounds/feature/discover/ui/pack_detail.dart';
+import 'package:vsounds/feature/root/root_page.dart';
 import 'package:vsounds/feature/start/start_page.dart';
 import 'package:vsounds/router/paths.dart';
 import 'package:vsounds/splash.dart';
@@ -31,12 +33,18 @@ final goRouterConfiguration = GoRouter(
         return const StartPage();
       },
     ),
-    // GoRoute(
-    //   path: Paths.root,
-    //   builder: (context, state) {
-    //     return const Root();
-    //   },
-    // ),
+    GoRoute(
+      path: Paths.root,
+      builder: (context, state) {
+        return const RootPage();
+      },
+    ),
+    GoRoute(
+      path: Paths.packDetail,
+      builder: (context, state) {
+        return const PackdetailPage();
+      },
+    ),
 
     // GoRoute(
     //   path: Paths.eventDetail,

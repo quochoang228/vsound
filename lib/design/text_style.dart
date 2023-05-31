@@ -40,7 +40,38 @@ abstract class UITextStyles {
   static const TextStyle body = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 17,
-    height: 22 / 22,
+    height: 22 / 17,
+    letterSpacing: 0,
+    color: Colors.white,
+  );
+
+  static const TextStyle tab = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 10,
+    height: 12 / 10,
+    letterSpacing: 0,
+    color: Colors.white,
+  );
+
+  static const TextStyle footnote = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 13,
+    height: 18 / 13,
+    letterSpacing: 0,
+    color: Colors.white,
+  );
+  static const TextStyle subhead = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+    height: 20 / 15,
+    letterSpacing: 0,
+    color: Colors.white,
+  );
+
+  static const TextStyle nav = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 10,
+    height: 12 / 10,
     letterSpacing: 0,
     color: Colors.white,
   );

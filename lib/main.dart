@@ -23,6 +23,8 @@ Future<void> main() async {
       // background Navigation
       statusBarIconBrightness: Brightness.light,
 
+      statusBarBrightness: Brightness.dark,
+
       // set màu cho icon của status bar
       // systemNavigationBarDividerColor: Colors.orangeAccent,
     ),
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-        return MaterialApp.router(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: goRouterConfiguration,
     );

@@ -89,7 +89,7 @@ class NormalButton extends StatelessWidget {
     required this.text,
     this.icon,
     this.isEnable = true,
-    this.backgroundColor = AppColors.sysWhite,
+    this.backgroundColor = Colors.transparent,
     this.disableBackgroundColor = AppColors.bgTertiary,
     this.alignment,
     this.child,

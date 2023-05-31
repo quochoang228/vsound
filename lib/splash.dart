@@ -50,7 +50,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
           children: [
             MyAssets.images.appIcon.svg(),
             const Gap(16),
-            const Text(
+             Text(
               'Sleep Sounds',
               textAlign: TextAlign.center,
               style: UITextStyles.largeTitle,
