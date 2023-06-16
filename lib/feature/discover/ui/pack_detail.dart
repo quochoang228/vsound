@@ -46,6 +46,7 @@ class _PackdetailPageState extends ConsumerState<PackdetailPage> {
                 // color: Colors.amber,
                 height: 100,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [

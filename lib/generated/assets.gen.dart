@@ -180,6 +180,25 @@ class $AssetsSoundsGen {
       ];
 }
 
+class $AssetsZigzangGen {
+  const $AssetsZigzangGen();
+
+  /// File path: assets/zigzang/logo.svg
+  SvgGenImage get logo => const SvgGenImage('assets/zigzang/logo.svg');
+
+  /// File path: assets/zigzang/menu.svg
+  SvgGenImage get menu => const SvgGenImage('assets/zigzang/menu.svg');
+
+  /// File path: assets/zigzang/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/zigzang/search.svg');
+
+  /// File path: assets/zigzang/shopping.svg
+  SvgGenImage get shopping => const SvgGenImage('assets/zigzang/shopping.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [logo, menu, search, shopping];
+}
+
 class $AssetsImagesNavGen {
   const $AssetsImagesNavGen();
 
@@ -216,6 +235,7 @@ class MyAssets {
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsSoundsGen sounds = $AssetsSoundsGen();
+  static const $AssetsZigzangGen zigzang = $AssetsZigzangGen();
 }
 
 class AssetGenImage {

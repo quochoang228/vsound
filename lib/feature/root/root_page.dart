@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:vsounds/design/colors.dart';
 import 'package:vsounds/feature/discover/ui/discover_page.dart';
 import 'package:vsounds/feature/discover/ui/pack_detail.dart';
+import 'package:vsounds/feature/profile/ui/profile_page.dart';
 import 'package:vsounds/generated/assets.gen.dart';
 import 'package:vsounds/helper/dialog_helper.dart';
 import 'package:vsounds/widgets/bottom_nav_bar.dart';
@@ -115,14 +116,15 @@ class _RootPageState extends ConsumerState<RootPage> {
         body: PageView(
           // physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
+          physics: const NeverScrollableScrollPhysics(),
           onPageChanged: (value) =>
               ref.read(rootIndexProvider.notifier).update((state) => value),
           children: [
             DiscoverPage(
               scrollController: discoverScroll,
             ),
-            PackdetailPage(),
-            Container(),
+            const PackdetailPage(),
+            const ProfilePage(),
           ],
         ),
       ),
